@@ -13,7 +13,6 @@
     "datauri": "^0.5.5",
     "js-string-escape": "^1.0.0",
     "static-module": "^1.0.0",
-    "tape": "^3.0.0",
     "through2": "^0.6.3"
   },
   "devDependencies": {
