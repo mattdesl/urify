@@ -20,9 +20,6 @@ module.exports = function (file, opts) {
     
     function urify(file) {
         var data = datauri(file)
-        var stream = through()
-        stream.push("'"+escape(data)+"'")
-        stream.push(null)
-        return stream
+        return "'"+escape(data)+"'"
     }
 }
