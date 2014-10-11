@@ -2,11 +2,11 @@
 
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
 
-This is a browserify transform stream to statically analyze [datauri](https://www.npmjs.org/package/datauri) expressions and inlines them during the bundle step. This allows you to do the following in the browser:  
+This is a browserify transform stream to statically analyze [datauri](https://www.npmjs.org/package/datauri) expressions, inlining them during the bundle step. This allows you to do the following in the browser:  
 
 ```js
 var datauri = require('datauri')
-var uri = datauri(__dirname+'/baboon.png')
+var uri = datauri(__dirname+'/icon.png')
 
 var img = new Image()
 img.onload = function() {
@@ -25,9 +25,17 @@ And the bundled file will have code that looks like this:
 var uri = "data:image/png;base64,....."
 ```
 
-## Usage
+## API Usage
 
 [![NPM](https://nodei.co/npm/urify.png)](https://nodei.co/npm/urify/)
+
+For using this module directly, without browserify.
+
+#### `urify(file, opt)`
+
+Returns a through stream inlining `datauri()` calls in-place. 
+
+Optionally, you can set which `opt.vars` will be used in the [static-eval](https://www.npmjs.org/package/static-eval) in addition to `__dirname` and `___filename`. 
 
 ## License
 
