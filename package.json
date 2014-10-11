@@ -1,0 +1,47 @@
+{
+  "name": "urify",
+  "version": "1.0.0",
+  "description": "static analysis for datauri expressions",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Matt DesLauriers",
+    "email": "dave.des@gmail.com",
+    "url": "https://github.com/mattdesl"
+  },
+  "dependencies": {
+    "datauri": "^0.5.5",
+    "js-string-escape": "^1.0.0",
+    "quote-stream": "0.0.0",
+    "static-module": "^1.0.0",
+    "tape": "^3.0.0",
+    "through2": "^0.6.3"
+  },
+  "devDependencies": {
+    "browserify": "^6.0.3",
+    "tape": "^3.0.0"
+  },
+  "scripts": {
+    "test": "node test/bundle.js"
+  },
+  "keywords": [
+    "data",
+    "uri",
+    "datauri",
+    "base64",
+    "b64",
+    "inline",
+    "browserify",
+    "asset",
+    "assets",
+    "url"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mattdesl/urify.git"
+  },
+  "homepage": "https://github.com/mattdesl/urify",
+  "bugs": {
+    "url": "https://github.com/mattdesl/urify/issues"
+  }
+}
