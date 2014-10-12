@@ -1,6 +1,6 @@
 {
   "name": "urify",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "static analysis for datauri expressions",
   "main": "index.js",
   "license": "MIT",
