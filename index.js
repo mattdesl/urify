@@ -5,6 +5,7 @@ var datauri = require('datauri')
 var escape = require('js-string-escape')
 
 module.exports = function (file, opts) {
+    console.log(module.exports.__emitter)
     if (/\.json$/.test(file)) return through()
     if (module.exports.__emitter) return module.exports.__emitter(file, opts)
 
