@@ -3,6 +3,7 @@ var path = require('path')
 var through = require('through2')
 var datauri = require('datauri')
 var escape = require('js-string-escape')
+var path = require('path')
 
 module.exports = function (file, opts) {
     if (/\.json$/.test(file)) return through()
@@ -16,7 +17,7 @@ module.exports = function (file, opts) {
 
     var sm = staticModule(
         { 'datauri': urify },
-        { vars: vars }
+        { vars: vars, varModules: { path: path } }
     )
     return sm
     
