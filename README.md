@@ -13,7 +13,7 @@ var uri = urify(path.join(__dirname, 'icon.png'));
 
 var img = new Image()
 img.onload = function() {
-	console.log("Image loaded!")
+  console.log("Image loaded!")
 }
 img.src = uri
 ```
