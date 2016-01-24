@@ -10,17 +10,19 @@
     "url": "https://github.com/mattdesl"
   },
   "dependencies": {
-    "datauri": "^0.7.0",
-    "js-string-escape": "^1.0.0",
-    "static-module": "^1.0.0",
-    "through2": "^0.6.3"
+    "from2-string": "^1.1.0",
+    "mime": "^1.3.4",
+    "quote-stream": "^1.0.2",
+    "readable-stream": "^2.0.5",
+    "static-module": "^1.3.0"
   },
   "devDependencies": {
-    "browserify": "^6.0.3",
-    "tape": "^3.0.0"
+    "browserify": "^13.0.0",
+    "semistandard": "^7.0.5",
+    "tape": "^4.4.0"
   },
   "scripts": {
-    "test": "node test/bundle.js"
+    "test": "semistandard && node test/index.js"
   },
   "keywords": [
     "data",
