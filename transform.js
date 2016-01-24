@@ -21,7 +21,12 @@ module.exports = function urifyTransform (file, opts) {
   return sm;
 
   function urifyEscaped (file) {
-    var data = urify(file);
+    var data = '';
+    try {
+      data = urify(file);
+    } catch (err) {
+      sm.emit('error', err);
+    }
     return fromString(data).pipe(quote());
   }
 };
