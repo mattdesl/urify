@@ -29,3 +29,20 @@ test('bundles with inline uri', function (t) {
     t.equal(msg, expected);
   }
 });
+
+test('bundles with require.resolve', function (t) {
+  t.plan(1);
+
+  var b = browserify();
+  b.add(__dirname + '/resolve.js');
+  b.transform(path.resolve(__dirname, '..', 'transform.js'));
+
+  b.bundle(function (err, src) {
+    if (err) t.fail(err);
+    vm.runInNewContext(src, { console: { log: log } });
+  });
+
+  function log (msg) {
+    t.equal(msg, expected);
+  }
+});
