@@ -4,14 +4,20 @@ var quote = require('quote-stream');
 var urify = require('./');
 var fromString = require('from2-string');
 var PassThrough = require('readable-stream/passthrough');
+var resolve = require('resolve');
 
 module.exports = function urifyTransform (file, opts) {
   if (/\.json$/.test(file)) return new PassThrough();
 
+  function resolver (p) {
+    return resolve.sync(p, { basedir: path.dirname(file) });
+  }
+
   if (!opts) opts = {};
   var vars = opts.vars || {
     __filename: file,
-    __dirname: path.dirname(file)
+    __dirname: path.dirname(file),
+    require: { resolve: resolver }
   };
 
   var sm = staticModule(
