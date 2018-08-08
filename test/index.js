@@ -17,7 +17,7 @@ test('bundles with inline uri', function (t) {
   t.plan(1);
 
   var b = browserify();
-  b.add(__dirname + '/basic.js');
+  b.add(path.join(__dirname, 'basic.js'));
   b.transform(path.resolve(__dirname, '..', 'transform.js'));
 
   b.bundle(function (err, src) {
@@ -34,7 +34,7 @@ test('bundles with require.resolve', function (t) {
   t.plan(1);
 
   var b = browserify();
-  b.add(__dirname + '/resolve.js');
+  b.add(path.resolve(__dirname, 'resolve.js'));
   b.transform(path.resolve(__dirname, '..', 'transform.js'));
 
   b.bundle(function (err, src) {
